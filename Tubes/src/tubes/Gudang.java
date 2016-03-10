@@ -36,7 +36,7 @@ public class Gudang {
     }
 
     public Barang getBarang(int i) {
-        if (i < 100) {
+        if (i < b.length) {
             return b[i];
         } else {
             return null;
