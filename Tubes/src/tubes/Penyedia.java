@@ -10,15 +10,31 @@ package tubes;
  * @author Baldo
  */
 public class Penyedia extends Petugas {
-    private static Barang[] b=new Barang[100];
+    private Barang[] b=new Barang[100];
     private int jumlahBarang=0;
 
-    public static Barang[] getBarang() {
+    public Barang[] getBarang() {
         return b;
     }
+    
+    public Barang getBarang(String indx) {
+        Barang brg = new Barang();
+        for (int i=0; i<b.length; i++) {
+            if (b[i].getIndex() == indx) {
+                brg = b[i];
+            }
+        }
+        
+        return brg;
+    }
 
-    public static void setBarang(Barang[] aB) {
-        b = aB;
+    public void setBarang(Barang aB) {
+        if (jumlahBarang < b.length) {
+            b[jumlahBarang] = aB;
+            jumlahBarang++;
+        } else {
+            System.out.println("Pinuh");
+        }
     }
     
     
@@ -37,6 +53,7 @@ public class Penyedia extends Petugas {
     public void createBarang(String index, String nama, int jml) {
         if (getJumlahBarang() < 100) {
             getBarang()[getJumlahBarang()] = new Barang(index, nama, jml);
+            getBarang()[getJumlahBarang()].setIdPenyedia(getNip());
             setJumlahBarang(getJumlahBarang() + 1);
         }
     }    

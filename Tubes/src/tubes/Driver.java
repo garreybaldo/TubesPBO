@@ -9,7 +9,7 @@ package tubes;
  *
  * @author Baldo
  */
-public class Tubes {
+public class Driver {
 
     /**
      * @param args the command line arguments
@@ -17,7 +17,7 @@ public class Tubes {
     public static void main(String[] args) {
         // TODO code application logic here
         //Tambah barang ke gudang 1
-        Gudang g1 = new Gudang(001);
+        /*Gudang g1 = new Gudang(001);
         Barang b1 = new Barang("123","Kursi",1);
         Barang b2 = new Barang("124","Meja",3);
         Barang b3 = new Barang("125","Lemari",1);
@@ -69,7 +69,9 @@ public class Tubes {
             System.out.println("Nama Barang   : " + g2.getBarang(i).getNamaB());
             System.out.println("Jumlah Barang : " + g2.getBarang(i).getJml());
             System.out.println();
-        }        
+        }*/
+        AplikasiConsole ac = new AplikasiConsole();
+        ac.MainMenu();
     }
     
 }

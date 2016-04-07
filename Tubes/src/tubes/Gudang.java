@@ -11,6 +11,7 @@ package tubes;
  */
 public class Gudang {
     private int noGudang;
+    private String namaGudang;
     private int maxBarang=50;
     private int nBarang = 0;
     private Barang[] b;
@@ -20,11 +21,23 @@ public class Gudang {
         b = new Barang[maxBarang];
     }
 
+    public Gudang() {
+    }
+    
+
     public void addMasuk(Barang b) {
         if (nBarang < maxBarang) {
             this.b[nBarang] = b;
             nBarang++;
         }
+    }
+    
+    public void setNamaGudang(String namaGudang){
+        this.namaGudang = namaGudang;
+    }
+    
+    public String getNamaGudang(){
+        return namaGudang;
     }
 
     public void setNoGudang(int noGudang) {

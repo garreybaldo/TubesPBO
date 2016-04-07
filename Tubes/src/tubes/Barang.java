@@ -10,6 +10,7 @@ package tubes;
  * @author Baldo
  */
 public class Barang {
+    private long idPenyedia;
     private String index;
     private String namab;
     private int jml;
@@ -19,6 +20,11 @@ public class Barang {
         this.namab = namab;
         this.jml = jml;
     }
+
+    public Barang() {
+    }
+    
+    
 
     public String getIndex() {
         return index;
@@ -42,5 +48,19 @@ public class Barang {
 
     public void setJml(int jml) {
         this.jml = jml;
+    }
+
+    /**
+     * @return the idPenyedia
+     */
+    public long getIdPenyedia() {
+        return idPenyedia;
+    }
+
+    /**
+     * @param idPenyedia the idPenyedia to set
+     */
+    public void setIdPenyedia(long idPenyedia) {
+        this.idPenyedia = idPenyedia;
     }
 }
