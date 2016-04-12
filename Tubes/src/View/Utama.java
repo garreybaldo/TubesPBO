@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tubes;
+package View;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JButton;
 
 /**
  *
@@ -18,8 +19,7 @@ public class Utama extends javax.swing.JFrame {
      * Creates new form Utama
      */
     public Utama() {
-        initComponents();
-        //daftarButton.addActionListener(new Daftar().setVisible(true));
+        initComponents();        
     }
 
     /**
@@ -98,38 +98,7 @@ public class Utama extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Utama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Utama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Utama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Utama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new Utama().setVisible(true);
-            }
-        });
-    }
+        
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cariButton;
@@ -138,14 +107,67 @@ public class Utama extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton loginButton;
     // End of variables declaration//GEN-END:variables
-    /*private class Event implements ActionListener{
-        @Override
-        public void actionPerformed(ActionEvent e){
-            int bill,bill2,hasil;
-            bill = Integer.parseInt(text1.getText());
-            bill2 = Integer.parseInt(text2.getText());
-            hasil = bill+bill2;
-            tampil.setText(""+hasil);
-        }
-    }*/
+
+    /**
+     * @return the cariButton
+     */
+    public javax.swing.JButton getCariButton() {
+        return cariButton;
+    }
+
+    /**
+     * @param cariButton the cariButton to set
+     */
+    public void setCariButton(javax.swing.JButton cariButton) {
+        this.cariButton = cariButton;
+    }
+
+    /**
+     * @return the daftarButton
+     */
+    public javax.swing.JButton getDaftarButton() {
+        return daftarButton;
+    }
+
+    /**
+     * @param daftarButton the daftarButton to set
+     */
+    public void setDaftarButton(javax.swing.JButton daftarButton) {
+        this.daftarButton = daftarButton;
+    }
+
+    /**
+     * @return the hapusButton
+     */
+    public javax.swing.JButton getHapusButton() {
+        return hapusButton;
+    }
+
+    /**
+     * @param hapusButton the hapusButton to set
+     */
+    public void setHapusButton(javax.swing.JButton hapusButton) {
+        this.hapusButton = hapusButton;
+    }
+
+    /**
+     * @return the loginButton
+     */
+    public javax.swing.JButton getLoginButton() {
+        return loginButton;
+    }
+
+    /**
+     * @param loginButton the loginButton to set
+     */
+    public void setLoginButton(javax.swing.JButton loginButton) {
+        this.loginButton = loginButton;
+    }
+    
+    public void addListener(ActionListener e){
+        daftarButton.addActionListener(e);
+        loginButton.addActionListener(e);
+        hapusButton.addActionListener(e);
+        cariButton.addActionListener(e);
+    }
 }

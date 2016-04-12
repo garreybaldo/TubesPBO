@@ -5,6 +5,8 @@
  */
 package tubes;
 
+import Controller.UtamaController;
+
 /**
  *
  * @author Baldo
@@ -70,8 +72,10 @@ public class Driver {
             System.out.println("Jumlah Barang : " + g2.getBarang(i).getJml());
             System.out.println();
         }*/
-        AplikasiConsole ac = new AplikasiConsole();
-        ac.MainMenu();
+        //AplikasiConsole ac = new AplikasiConsole();
+        //ac.MainMenu();
+        
+        UtamaController uc = new UtamaController();        
     }
     
 }
