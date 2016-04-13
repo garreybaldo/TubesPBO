@@ -22,10 +22,8 @@ public class Barang {
     }
 
     public Barang() {
-    }
+    }  
     
-    
-
     public String getIndex() {
         return index;
     }
@@ -50,16 +48,10 @@ public class Barang {
         this.jml = jml;
     }
 
-    /**
-     * @return the idPenyedia
-     */
     public long getIdPenyedia() {
         return idPenyedia;
     }
 
-    /**
-     * @param idPenyedia the idPenyedia to set
-     */
     public void setIdPenyedia(long idPenyedia) {
         this.idPenyedia = idPenyedia;
     }
