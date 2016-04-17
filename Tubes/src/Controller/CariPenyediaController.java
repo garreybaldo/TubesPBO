@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import javax.swing.JOptionPane;
+import tubes.Penyedia;
 
 /**
  *
@@ -40,8 +41,9 @@ public class CariPenyediaController extends MouseAdapter implements ActionListen
                 JOptionPane.showMessageDialog(caripenyedia, "Id tidak ada!");
             }else{
             //int nipPy = view.getSelectedId();
-            Penyedia py = model.getPenyedia(long nip);
-            new ControllerInputPelanggan(model, p);
+                int nip = Integer.parseInt(view.getInputId().getText());
+            //model.getPenyedia(long nip);
+            //new CariPenyediaController(model, p);
             view.dispose();                
                 JOptionPane.showMessageDialog(caripenyedia, "Ada");
                 //new UtamaController();

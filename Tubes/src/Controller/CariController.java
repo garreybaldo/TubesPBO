@@ -34,12 +34,16 @@ public class CariController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Object event = e.getSource();
         if (event.equals(view.getCariPenyedia())) {
-            new CariPenyediaController(model);
+            new CariPenyediaController();
+            view.dispose();
         } else if(event.equals(view.getCariPetugas())){
-            new CariPetugasController(model);
+            new CariPetugasController();
             view.dispose();
         } else if(event.equals(view.getCariGudang())){
-            new CariGudangController(model);
+            new CariGudangController();
+            view.dispose();
+        }else if(event.equals(view.getBack())){
+            new UtamaController(model);
             view.dispose();
         }
     }

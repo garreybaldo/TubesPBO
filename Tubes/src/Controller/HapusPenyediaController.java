@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import Model.Aplikasi;
 import View.Hapus;
 import View.HapusPenyedia;
 import java.awt.event.ActionEvent;
@@ -17,6 +18,7 @@ import javax.swing.JOptionPane;
  */
 public class HapusPenyediaController implements ActionListener {
     private HapusPenyedia hapuspenyedia;
+    Aplikasi model;
     
     public HapusPenyediaController(){
         hapuspenyedia = new HapusPenyedia();
@@ -32,11 +34,11 @@ public class HapusPenyediaController implements ActionListener {
                 JOptionPane.showMessageDialog(hapuspenyedia, "Id tidak ada!");
             }else{                
                 JOptionPane.showMessageDialog(hapuspenyedia, "Hapus penyedia berhasil");
-                new UtamaController();
+                new UtamaController(model);
                 hapuspenyedia.dispose();
             }
         }else if(event == hapuspenyedia.getBack()){
-            new HapusController();
+            new HapusController(model);
             hapuspenyedia.dispose();
         }
     }

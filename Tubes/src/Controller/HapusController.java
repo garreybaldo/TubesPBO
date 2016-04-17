@@ -34,12 +34,16 @@ public class HapusController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Object event = e.getSource();
         if (event.equals(view.getHapusPenyedia())) {
-            new HapusPenyediaController(model);
+            new HapusPenyediaController();
+            view.dispose();
         } else if(event.equals(view.getHapusPetugas())){
-            new HapusPetugasController(model);
+            new HapusPetugasController();
             view.dispose();
         } else if(event.equals(view.getHapusGudang())){
-            new HapusGudangController(model);
+            new HapusGudangController();
+            view.dispose();
+        } else if(event.equals(view.getBack())){
+            new UtamaController(model);
             view.dispose();
         }
     }

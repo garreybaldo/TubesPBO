@@ -70,7 +70,7 @@ public class Aplikasi {
                 return py;
             }
         }
-        Penyedia py = con.getPenyedia(idPy);
+        Penyedia py = con.getPenyedia((int) idPy);
         daftarPenyedia.add(py);
         return py;
     }
@@ -81,7 +81,7 @@ public class Aplikasi {
                 return pt;
             }
         }
-        Petugas pt = con.getPetugas(idPt);
+        Petugas pt = con.getPetugas((int) idPt);
         daftarPetugas.add(pt);
         return pt;
     }
@@ -106,7 +106,7 @@ public class Aplikasi {
     }
     
     public String[] getListIdBarang() {
-        return con.getListIDPelanggan();
+        return con.getListIndexBarang();
     }
 
     /*public void updatePelanggan(Pelanggan p) {

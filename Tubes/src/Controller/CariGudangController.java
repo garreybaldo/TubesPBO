@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import Model.Aplikasi;
 import View.CariGudang;
 import View.CariPetugas;
 import java.awt.event.ActionEvent;
@@ -17,6 +18,7 @@ import javax.swing.JOptionPane;
  */
 public class CariGudangController implements ActionListener {
     private CariGudang carigudang;
+    Aplikasi model;
     
     public CariGudangController(){
         carigudang = new CariGudang();
@@ -36,7 +38,7 @@ public class CariGudangController implements ActionListener {
                 //hapuspenyedia.dispose();
             }
         }else if(event == carigudang.getBack()){
-            new CariController();
+            new CariController(model);
             carigudang.dispose();
         }
     }

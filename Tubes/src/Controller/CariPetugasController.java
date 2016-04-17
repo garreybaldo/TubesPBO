@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import Model.Aplikasi;
 import View.CariPenyedia;
 import View.CariPetugas;
 import java.awt.event.ActionEvent;
@@ -17,6 +18,7 @@ import javax.swing.JOptionPane;
  */
 public class CariPetugasController implements ActionListener {
     private CariPetugas caripetugas;
+    Aplikasi model;
     
     public CariPetugasController(){
         caripetugas = new CariPetugas();
@@ -36,7 +38,7 @@ public class CariPetugasController implements ActionListener {
                 //hapuspenyedia.dispose();
             }
         }else if(event == caripetugas.getBack()){
-            new CariController();
+            new CariController(model);
             caripetugas.dispose();
         }
     }

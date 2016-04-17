@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import Database.Database;
 import Model.Aplikasi;
 import View.Daftar;
 import View.DaftarPenyedia;
@@ -24,6 +25,7 @@ public class DaftarPenyediaController implements ActionListener, FocucListener {
     Aplikasi model;
     DaftarPenyedia view;
     Penyedia py;
+    Database db;
 
     public DaftarPenyediaController(Aplikasi model) {
         this.model = model;
@@ -40,9 +42,12 @@ public class DaftarPenyediaController implements ActionListener, FocucListener {
         if (event.equals(view.getSubmit())) {
             String nama = view.getNama();
             long nip = view.getId();
-            if (py == null) {
-                long Nip = model.createPenyedia(nama, nip);
+            Penyedia py = new Penyedia(view.getNama(), view.getId());
+            if (db.getPenyedia((int) nip) != null) {
+                //long Nip = db.savePenyedia(py);
                 //view.setNama("");
+                new UtamaController(model);
+                view.dispose();
             } else{
                 JOptionPane.showMessageDialog(view, "NIP Penyedia "+py.getNip()+" sudah ada");
             }

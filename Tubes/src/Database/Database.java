@@ -35,6 +35,10 @@ public class Database {
         }
 
     }
+    
+    public Connection getConn() {
+        return con;
+    }
 
     public void savePenyedia(Penyedia py) {
         try {
@@ -66,18 +70,6 @@ public class Database {
         }
         return py;
     }
-
-    /*public void updatePelanggan(Pelanggan p) {
-        try {
-            String query = "update pelanggan set nama ='"
-                    + p.getNama() + "', address= '"
-                    + p.getAddress() + "' where idPelanggan = "
-                    + p.getIdPelanggan();
-            st.executeUpdate(query);
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-    }*/
 
     public String[] getListNipPenyedia() {
         ArrayList<String> listNip = new ArrayList<>();
@@ -125,18 +117,6 @@ public class Database {
         }
         return pt;
     }
-
-    /*public void updatePelanggan(Pelanggan p) {
-        try {
-            String query = "update pelanggan set nama ='"
-                    + p.getNama() + "', address= '"
-                    + p.getAddress() + "' where idPelanggan = "
-                    + p.getIdPelanggan();
-            st.executeUpdate(query);
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-    }*/
 
     public String[] getListNipPetugas() {
         ArrayList<String> listNip = new ArrayList<>();
@@ -186,18 +166,6 @@ public class Database {
         return b;
     }
 
-    /*public void updatePelanggan(Pelanggan p) {
-        try {
-            String query = "update pelanggan set nama ='"
-                    + p.getNama() + "', address= '"
-                    + p.getAddress() + "' where idPelanggan = "
-                    + p.getIdPelanggan();
-            st.executeUpdate(query);
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-    }*/
-
     public String[] getListIndexBarang() {
         ArrayList<String> listIndex = new ArrayList<>();
         try {
@@ -216,61 +184,55 @@ public class Database {
     
     public void deletePenyedia(long nip) throws SQLException {
         Penyedia py = null;
-        //try {
-            String query = "DELETE * FROM `penyedia` WHERE `nip` = " + nip;
-            ResultSet rs = st.executeQuery(query);
-            //while (rs.next()) {
-                //b = new Barang(rs.getInt(1), rs.getString(2), rs.getInt(3));
-            //}
-        //} catch (SQLException ex) {
-            //ex.printStackTrace();
-        //}
-        //return py;
+        String query = "DELETE * FROM `penyedia` WHERE `nip` = " + nip;
+        ResultSet rs = st.executeQuery(query);
     }
     
     public void deletePetugas(long nip) throws SQLException {
         Petugas pt = null;
-        //try {
-            String query = "DELETE * FROM `petugas` WHERE `nip` = " + nip;
-            ResultSet rs = st.executeQuery(query);
-            //while (rs.next()) {
-                //b = new Barang(rs.getInt(1), rs.getString(2), rs.getInt(3));
-            //}
-        //} catch (SQLException ex) {
-            //ex.printStackTrace();
-        //}
-        //return py;
+        String query = "DELETE * FROM `petugas` WHERE `nip` = " + nip;
+        ResultSet rs = st.executeQuery(query);
+            
     }
     
     public void deleteGudang(int no) throws SQLException {
         Penyedia py = null;
-        //try {
-            String query = "DELETE * FROM `gudang` WHERE `noGudang` = " + no;
-            ResultSet rs = st.executeQuery(query);
-            //while (rs.next()) {
-                //b = new Barang(rs.getInt(1), rs.getString(2), rs.getInt(3));
-            //}
-        //} catch (SQLException ex) {
-            //ex.printStackTrace();
-        //}
-        //return py;
+        String query = "DELETE * FROM `gudang` WHERE `noGudang` = " + no;
+        ResultSet rs = st.executeQuery(query);
+            
     }
     
-    
-    
-    public void LoginPenyedia(long nip) throws SQLException{
-        String query = "SELECT * FROM penyedia where `nip` = " + nip;
+    public boolean cekPenyedia(long nip) throws SQLException{
+        st = getConn().createStatement();
+        String query = "select * from penyedia where nip='"+nip+"'";
         ResultSet rs = st.executeQuery(query);
-        if(rs.next()){
-            if(getInputId.getText().equals(rs.getString("password"))){
-                    this.dispose();
-                    JOptionPane.showMessageDialog(null, "login berhasil");
-                }
-                else{
-                    JOptionPane.showMessageDialog(null,"username and password salah");
-                }        
+        if (rs != null && rs.next()) {
+           return true;
         }else{
-            
+           return false;
         }
+    }
+    
+    public boolean cekPetugas(long nip) throws SQLException{
+        st = getConn().createStatement();
+        String query = "select * from petugas where nip='"+nip+"'";
+        ResultSet rs = st.executeQuery(query);
+        if (rs != null && rs.next()) {
+           return true;
+        }else{
+           return false;
+        }
+    }
+    
+    public Penyedia getDataPenyedia(long nip) throws SQLException{        
+        st = getConn().createStatement();
+        String query = "select * from penedia where nip='"+nip+"'";
+        ResultSet rs = st.executeQuery(query);
+        if (rs != null && rs.next()) {
+           Penyedia py = new Penyedia(rs.getString("nama"),rs.getLong("nip"));
+           return py;
+        }
+        
+        return null;
     }
 }

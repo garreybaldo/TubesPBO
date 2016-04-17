@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import Model.Aplikasi;
 import View.LoginPenyedia;
 import View.LoginPetugas;
 import java.awt.event.ActionEvent;
@@ -18,6 +19,7 @@ import tubes.AplikasiConsole;
  */
 public class LoginPetugasController implements ActionListener {
     private LoginPetugas loginpetugas;
+    Aplikasi model;
     
     public LoginPetugasController(){
         loginpetugas = new LoginPetugas();
@@ -45,7 +47,7 @@ public class LoginPetugasController implements ActionListener {
                 }
             }
         }else if(event == loginpetugas.getBack()){
-            new LoginController();
+            new LoginController(model);
             loginpetugas.dispose();
         }
     }
