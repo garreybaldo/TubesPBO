@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import Model.Aplikasi;
 import View.Login;
 import View.LoginPenyedia;
 import View.Utama;
@@ -18,23 +19,24 @@ import java.awt.event.ActionListener;
 public class LoginController implements ActionListener {
     private Login login;
     
-    public LoginController(){
-        login = new Login();
-        login.setVisible(true);
-        login.addListener(this);
+    Aplikasi model;
+    Login view;
+
+    public LoginController(Aplikasi model) {
+        this.model = model;
+        view = new Login();
+        view.setVisible(true);
+        view.addListener(this);
     }
-    
+
+    @Override
     public void actionPerformed(ActionEvent e) {
         Object event = e.getSource();
-        if(event == login.getLoginPenyedia()){
-            new LoginPenyediaController();
-            login.dispose();
-        }else if(event == login.getLoginPetugas()){
-            new LoginPetugasController();
-            login.dispose();
-        }else if(event == login.getBack()){
-            new UtamaController();
-            login.dispose();
+        if (event.equals(view.getLoginPenyedia())) {
+            new LoginPenyediaController(model);
+        } else if(event.equals(view.getLoginPetugas())){
+            new LoginPetugasController(model);
+            view.dispose();
         }
     }
 }

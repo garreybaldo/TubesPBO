@@ -19,7 +19,9 @@ public class Utama extends javax.swing.JFrame {
      * Creates new form Utama
      */
     public Utama() {
-        initComponents();        
+        initComponents();
+        this.setLocationRelativeTo(null);
+        this.setTitle("Sistem Informasi Gudang");        
     }
 
     /**

@@ -5,6 +5,7 @@
  */
 package tubes;
 
+import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Int;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -26,6 +27,14 @@ public class AplikasiConsole {
         daftarGudang = new Gudang[20];
         daftarPenyedia = new Penyedia[20];
         daftarPetugas = new Petugas[20];
+    }
+    
+    public int getNPenyedia(){
+        return nPy;
+    }
+    
+    public int getNPetugas(){
+        return nPt;
     }
 
     public void addPenyedia(Penyedia py) {
@@ -165,7 +174,7 @@ public class AplikasiConsole {
     public void createBarang(Penyedia p) {
         Barang newbrg = new Barang();
         System.out.print("ID    : ");
-        String index = scan.nextLine();
+        Int index = scan.nextInt();
         System.out.print("Nama  : ");
         String nama = scan.nextLine();
         System.out.print("Jumlah: ");

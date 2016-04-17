@@ -5,6 +5,8 @@
  */
 package View;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Baldo
@@ -95,37 +97,7 @@ public class MenuPetugas extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuPetugas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuPetugas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuPetugas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuPetugas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MenuPetugas().setVisible(true);
-            }
-        });
-    }
+     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton hapusBarang;
@@ -135,4 +107,82 @@ public class MenuPetugas extends javax.swing.JFrame {
     private javax.swing.JButton logout;
     private javax.swing.JButton tambahBarang;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the hapusBarang
+     */
+    public javax.swing.JButton getHapusBarang() {
+        return hapusBarang;
+    }
+
+    /**
+     * @param hapusBarang the hapusBarang to set
+     */
+    public void setHapusBarang(javax.swing.JButton hapusBarang) {
+        this.hapusBarang = hapusBarang;
+    }
+
+    /**
+     * @return the lihatGudang
+     */
+    public javax.swing.JButton getLihatGudang() {
+        return lihatGudang;
+    }
+
+    /**
+     * @param lihatGudang the lihatGudang to set
+     */
+    public void setLihatGudang(javax.swing.JButton lihatGudang) {
+        this.lihatGudang = lihatGudang;
+    }
+
+    /**
+     * @return the lihatSemuaBarang
+     */
+    public javax.swing.JButton getLihatSemuaBarang() {
+        return lihatSemuaBarang;
+    }
+
+    /**
+     * @param lihatSemuaBarang the lihatSemuaBarang to set
+     */
+    public void setLihatSemuaBarang(javax.swing.JButton lihatSemuaBarang) {
+        this.lihatSemuaBarang = lihatSemuaBarang;
+    }
+
+    /**
+     * @return the logout
+     */
+    public javax.swing.JButton getLogout() {
+        return logout;
+    }
+
+    /**
+     * @param logout the logout to set
+     */
+    public void setLogout(javax.swing.JButton logout) {
+        this.logout = logout;
+    }
+
+    /**
+     * @return the tambahBarang
+     */
+    public javax.swing.JButton getTambahBarang() {
+        return tambahBarang;
+    }
+
+    /**
+     * @param tambahBarang the tambahBarang to set
+     */
+    public void setTambahBarang(javax.swing.JButton tambahBarang) {
+        this.tambahBarang = tambahBarang;
+    }
+
+    public void addListener(ActionListener e){
+        tambahBarang.addActionListener(e);
+        hapusBarang.addActionListener(e);
+        lihatGudang.addActionListener(e);
+        lihatSemuaBarang.addActionListener(e);
+        logout.addActionListener(e);
+    }
 }

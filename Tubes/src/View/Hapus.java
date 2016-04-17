@@ -18,6 +18,8 @@ public class Hapus extends javax.swing.JFrame {
      */
     public Hapus() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setTitle("Hapus");
     }
 
     /**

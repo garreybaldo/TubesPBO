@@ -5,7 +5,7 @@
  */
 package Controller;
 
-import View.DaftarBarang;
+import View.LihatSemuaBarang;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -13,13 +13,13 @@ import java.awt.event.ActionListener;
  *
  * @author Baldo
  */
-public class DaftarBarangController implements ActionListener {
-    DaftarBarang daftarbarang = new DaftarBarang();
+public class LihatSemuaBarangController implements ActionListener {
+    LihatSemuaBarang lihatsemuabarang = new LihatSemuaBarang();
     
-    public DaftarBarangController(){
-        daftarbarang = new DaftarBarang();
-        daftarbarang.setVisible(true);
-        daftarbarang.addListener(this);
+    public LihatSemuaBarangController(){
+        lihatsemuabarang = new LihatSemuaBarang();
+        lihatsemuabarang.setVisible(true);
+        lihatsemuabarang.addListener(this);
     }
     
     @Override

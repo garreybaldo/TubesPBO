@@ -17,7 +17,7 @@ public class Penyedia extends Petugas {
         return b;
     }
     
-    public Barang getBarang(String indx) {
+    public Barang getBarang(int indx) {
         Barang brg = new Barang();
         for (int i=0; i<b.length; i++) {
             if (b[i].getIndex() == indx) {
@@ -33,10 +33,9 @@ public class Penyedia extends Petugas {
             b[jumlahBarang] = aB;
             jumlahBarang++;
         } else {
-            System.out.println("Pinuh");
+            System.out.println("Penuh");
         }
     }
-    
     
     public Penyedia(String nama, long nip){
         super(nama,nip);
@@ -50,7 +49,7 @@ public class Penyedia extends Petugas {
         this.jumlahBarang = jumlahBarang;
     }
     
-    public void createBarang(String index, String nama, int jml) {
+    public void createBarang(int index, String nama, int jml) {
         if (getJumlahBarang() < 100) {
             getBarang()[getJumlahBarang()] = new Barang(index, nama, jml);
             getBarang()[getJumlahBarang()].setIdPenyedia(getNip());

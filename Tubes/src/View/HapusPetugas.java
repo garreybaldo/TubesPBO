@@ -5,6 +5,8 @@
  */
 package View;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Baldo
@@ -16,6 +18,8 @@ public class HapusPetugas extends javax.swing.JFrame {
      */
     public HapusPetugas() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setTitle("Hapus Petugas");
     }
 
     /**
@@ -30,7 +34,7 @@ public class HapusPetugas extends javax.swing.JFrame {
         back = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        inputid = new javax.swing.JTextField();
+        inputId = new javax.swing.JTextField();
         hapus = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -60,7 +64,7 @@ public class HapusPetugas extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(hapus)
-                            .addComponent(inputid, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(inputId, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(109, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -73,7 +77,7 @@ public class HapusPetugas extends javax.swing.JFrame {
                 .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(inputid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(hapus)
                 .addContainerGap(158, Short.MAX_VALUE))
@@ -85,43 +89,65 @@ public class HapusPetugas extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HapusPetugas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HapusPetugas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HapusPetugas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HapusPetugas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new HapusPetugas().setVisible(true);
-            }
-        });
-    }
+     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
     private javax.swing.JButton hapus;
-    private javax.swing.JTextField inputid;
+    private javax.swing.JTextField inputId;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the back
+     */
+    public javax.swing.JButton getBack() {
+        return back;
+    }
+
+    /**
+     * @param back the back to set
+     */
+    public void setBack(javax.swing.JButton back) {
+        this.back = back;
+    }
+
+    /**
+     * @return the hapus
+     */
+    public javax.swing.JButton getHapus() {
+        return hapus;
+    }
+
+    /**
+     * @param hapus the hapus to set
+     */
+    public void setHapus(javax.swing.JButton hapus) {
+        this.hapus = hapus;
+    }
+
+    /**
+     * @return the inputId
+     */
+    public javax.swing.JTextField getInputId() {
+        return inputId;
+    }
+
+    /**
+     * @param inputId the inputId to set
+     */
+    public void setInputId(javax.swing.JTextField inputId) {
+        this.inputId = inputId;
+    }
+    
+    public void addListener(ActionListener e) {
+        getInputId().addActionListener(e);
+        getHapus().addActionListener(e);
+        getBack().addActionListener(e);
+    }
+    
+    public String getId(){
+        return inputId.getText();
+    }
 }

@@ -10,12 +10,17 @@ import View.LoginPenyedia;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import tubes.AplikasiConsole;
+import tubes.Penyedia;
+import Model.Database;
+import java.awt.event.FocusListener;
+import Database.Database;
 
 /**
  *
  * @author Baldo
  */
-public class LoginPenyediaController implements ActionListener {
+public class LoginPenyediaController implements ActionListener, FocusListener {
     private LoginPenyedia loginpenyedia;
     
     public LoginPenyediaController(){
@@ -24,20 +29,15 @@ public class LoginPenyediaController implements ActionListener {
         loginpenyedia.addListener(this);
     }
     
+    @Override
     public void actionPerformed(ActionEvent e) {
         Object event = e.getSource();
         if(event == loginpenyedia.getLogin()){
-            if(inputId.getText() == ){
-                new LoginPenyediaController();
-                loginpenyedia.dispose();
-            }else{
-                JOptionPane.showMessageDialog(loginpenyedia, "Id Salah");
+            try{
+                Statement st = (Statement) con.GetConnection().createStatement();
+                ResultSet rs = st.executeQuery("SELECT * FROM enyedia where " + "nip=" + inputNip.getext())
             }
-        }else if(event == loginpenyedia.getBack()){
-            new LoginController();
-            loginpenyedia.dispose();
-        }//else if(
-            
-        
+        }
     }
-}
+} 
+

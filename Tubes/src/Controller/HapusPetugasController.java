@@ -5,18 +5,40 @@
  */
 package Controller;
 
+import View.HapusPenyedia;
+import View.HapusPetugas;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Baldo
  */
 public class HapusPetugasController implements ActionListener {
-
+    private HapusPetugas hapuspetugas;
+    
+    public HapusPetugasController(){
+        hapuspetugas = new HapusPetugas();
+        hapuspetugas.setVisible(true); 
+        hapuspetugas.addListener(this);
+    }
+    
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object event = e.getSource();
+        if(event == hapuspetugas.getHapus()){
+            if(hapuspetugas.getId().isEmpty()){
+                JOptionPane.showMessageDialog(hapuspetugas, "Id tidak ada!");
+            }else{                
+                JOptionPane.showMessageDialog(hapuspetugas, "Hapus penyedia berhasil");
+                new HapusController();
+                hapuspetugas.dispose();
+            }
+        }else if(event == hapuspetugas.getBack()){
+            new HapusController();
+            hapuspetugas.dispose();
+        }
     }
     
 }

@@ -5,6 +5,8 @@
  */
 package View;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Baldo
@@ -107,37 +109,7 @@ public class TambahBarang extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TambahBarang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TambahBarang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TambahBarang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TambahBarang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TambahBarang().setVisible(true);
-            }
-        });
-    }
+     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
@@ -150,4 +122,103 @@ public class TambahBarang extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JButton submit;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the back
+     */
+    public javax.swing.JButton getBack() {
+        return back;
+    }
+
+    /**
+     * @param back the back to set
+     */
+    public void setBack(javax.swing.JButton back) {
+        this.back = back;
+    }
+
+    /**
+     * @return the inputIdBarang
+     */
+    public javax.swing.JTextField getInputIdBarang() {
+        return inputIdBarang;
+    }
+
+    /**
+     * @param inputIdBarang the inputIdBarang to set
+     */
+    public void setInputIdBarang(javax.swing.JTextField inputIdBarang) {
+        this.inputIdBarang = inputIdBarang;
+    }
+
+    /**
+     * @return the inputJumlah
+     */
+    public javax.swing.JTextField getInputJumlah() {
+        return inputJumlah;
+    }
+
+    /**
+     * @param inputJumlah the inputJumlah to set
+     */
+    public void setInputJumlah(javax.swing.JTextField inputJumlah) {
+        this.inputJumlah = inputJumlah;
+    }
+
+    /**
+     * @return the inputNoGudang
+     */
+    public javax.swing.JTextField getInputNoGudang() {
+        return inputNoGudang;
+    }
+
+    /**
+     * @param inputNoGudang the inputNoGudang to set
+     */
+    public void setInputNoGudang(javax.swing.JTextField inputNoGudang) {
+        this.inputNoGudang = inputNoGudang;
+    }
+
+    /**
+     * @return the submit
+     */
+    public javax.swing.JButton getSubmit() {
+        return submit;
+    }
+
+    /**
+     * @param submit the submit to set
+     */
+    public void setSubmit(javax.swing.JButton submit) {
+        this.submit = submit;
+    }
+
+    public void addListener(ActionListener e){
+        back.addActionListener(e);
+        submit.addActionListener(e);
+    }
+    
+    public int getNoGudang(){
+        return Integer.parseInt(inputNoGudang.getText());
+    }
+    
+    public void setNoGudang(){
+        inputNoGudang.getText();
+    }
+    
+    public int getIdBarang(){
+        return Integer.parseInt(inputIdBarang.getText());
+    }
+    
+    public void setIdBarang(){
+        inputIdBarang.getText();
+    }
+    
+    public int getJumlah(){
+        return Integer.parseInt(inputJumlah.getText());
+    }
+    
+    public void setJumlah(){
+        inputJumlah.getText();
+    }
 }

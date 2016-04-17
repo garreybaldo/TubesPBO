@@ -11,11 +11,11 @@ package tubes;
  */
 public class Barang {
     private long idPenyedia;
-    private String index;
+    private int index;
     private String namab;
     private int jml;
     
-    public Barang(String index, String namab, int jml){
+    public Barang(int index, String namab, int jml){
         this.index = index;
         this.namab = namab;
         this.jml = jml;
@@ -24,11 +24,11 @@ public class Barang {
     public Barang() {
     }  
     
-    public String getIndex() {
+    public int getIndex() {
         return index;
     }
 
-    public void setIndex(String index) {
+    public void setIndex(int index) {
         this.index = index;
     }
 

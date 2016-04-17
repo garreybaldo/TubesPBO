@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import Model.Aplikasi;
 import View.Daftar;
 import View.Utama;
 import java.awt.event.ActionEvent;
@@ -17,24 +18,24 @@ import java.awt.event.ActionListener;
 public class DaftarController implements ActionListener {
     private Daftar daftar;
     
-    public DaftarController(){
-        daftar = new Daftar();
-        daftar.setVisible(true); 
-        daftar.addListener(this);
+    Aplikasi model;
+    Daftar view;
+
+    public DaftarController(Aplikasi model) {
+        this.model = model;
+        view = new Daftar();
+        view.setVisible(true);
+        view.addListener(this);
     }
-    
+
     @Override
     public void actionPerformed(ActionEvent e) {
         Object event = e.getSource();
-        if(event == daftar.getDaftarPenyedia()){
-            new DaftarPenyediaController();
-            daftar.dispose();
-        }else if(event == daftar.getDaftarPetugas()){
-            new DaftarPetugasController();
-            daftar.dispose();
-        }else if(event == daftar.getBack()){
-            new UtamaController();
-            daftar.dispose();
+        if (event.equals(view.getDaftarPenyedia())) {
+            new DaftarPenyediaController(model);
+        } else if(event.equals(view.getDaftarPetugas())){
+            new DaftarPetugasController(model);
+            view.dispose();
         }
     }
 }

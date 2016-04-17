@@ -6,6 +6,7 @@
 package tubes;
 
 import Controller.UtamaController;
+import Model.Aplikasi;
 
 /**
  *
@@ -74,8 +75,8 @@ public class Driver {
         }*/
         //AplikasiConsole ac = new AplikasiConsole();
         //ac.MainMenu();
-        
-        UtamaController uc = new UtamaController();        
+        Aplikasi model = new Aplikasi();
+        UtamaController uc = new UtamaController(model);        
     }
     
 }

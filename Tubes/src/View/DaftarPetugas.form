@@ -40,8 +40,8 @@
                       <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="submit" min="-2" max="-2" attributes="0"/>
-                          <Component id="inputnama" alignment="0" pref="120" max="32767" attributes="0"/>
-                          <Component id="inputid" alignment="0" max="32767" attributes="0"/>
+                          <Component id="inputNama" alignment="0" pref="120" max="32767" attributes="0"/>
+                          <Component id="inputId" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -64,7 +64,7 @@
                       <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="inputid" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="inputId" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -75,7 +75,7 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="inputnama" min="-2" max="-2" attributes="0"/>
+                      <Component id="inputNama" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -106,9 +106,9 @@
         <Property name="text" type="java.lang.String" value="Nama Petugas"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputid">
+    <Component class="javax.swing.JTextField" name="inputId">
     </Component>
-    <Component class="javax.swing.JTextField" name="inputnama">
+    <Component class="javax.swing.JTextField" name="inputNama">
     </Component>
     <Component class="javax.swing.JButton" name="submit">
       <Properties>

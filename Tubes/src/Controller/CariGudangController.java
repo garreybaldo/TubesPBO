@@ -5,18 +5,40 @@
  */
 package Controller;
 
+import View.CariGudang;
+import View.CariPetugas;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Baldo
  */
 public class CariGudangController implements ActionListener {
-
+    private CariGudang carigudang;
+    
+    public CariGudangController(){
+        carigudang = new CariGudang();
+        carigudang.setVisible(true); 
+        carigudang.addListener(this);
+    }
+    
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object event = e.getSource();
+        if(event == carigudang.getCari()){
+            if(carigudang.getNo().isEmpty()){
+                JOptionPane.showMessageDialog(carigudang, "Id tidak ada!");
+            }else{                
+                JOptionPane.showMessageDialog(carigudang, "Ada");
+                //new UtamaController();
+                //hapuspenyedia.dispose();
+            }
+        }else if(event == carigudang.getBack()){
+            new CariController();
+            carigudang.dispose();
+        }
     }
     
 }

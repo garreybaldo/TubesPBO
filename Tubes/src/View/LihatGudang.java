@@ -5,6 +5,8 @@
  */
 package View;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Baldo
@@ -96,37 +98,7 @@ public class LihatGudang extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LihatGudang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LihatGudang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LihatGudang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LihatGudang.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new LihatGudang().setVisible(true);
-            }
-        });
-    }
+     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
@@ -137,4 +109,87 @@ public class LihatGudang extends javax.swing.JFrame {
     private javax.swing.JButton lihat;
     private javax.swing.JTextArea showGudang;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the back
+     */
+    public javax.swing.JButton getBack() {
+        return back;
+    }
+
+    /**
+     * @param back the back to set
+     */
+    public void setBack(javax.swing.JButton back) {
+        this.back = back;
+    }
+
+    /**
+     * @return the inputNoGudang
+     */
+    public javax.swing.JTextField getInputNoGudang() {
+        return inputNoGudang;
+    }
+
+    /**
+     * @param inputNoGudang the inputNoGudang to set
+     */
+    public void setInputNoGudang(javax.swing.JTextField inputNoGudang) {
+        this.inputNoGudang = inputNoGudang;
+    }
+
+    /**
+     * @return the jScrollPane1
+     */
+    public javax.swing.JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    /**
+     * @param jScrollPane1 the jScrollPane1 to set
+     */
+    public void setjScrollPane1(javax.swing.JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    /**
+     * @return the lihat
+     */
+    public javax.swing.JButton getLihat() {
+        return lihat;
+    }
+
+    /**
+     * @param lihat the lihat to set
+     */
+    public void setLihat(javax.swing.JButton lihat) {
+        this.lihat = lihat;
+    }
+
+    /**
+     * @return the showGudang
+     */
+    public javax.swing.JTextArea getShowGudang() {
+        return showGudang;
+    }
+
+    /**
+     * @param showGudang the showGudang to set
+     */
+    public void setShowGudang(javax.swing.JTextArea showGudang) {
+        this.showGudang = showGudang;
+    }
+
+    public void addListener(ActionListener e){
+        back.addActionListener(e);
+        lihat.addActionListener(e);
+    }
+    
+    public int getNoGudang(){
+        return Integer.parseInt(inputNoGudang.getText());
+    }
+    
+    public void setNoGudang(){
+        inputNoGudang.getText();
+    }
 }

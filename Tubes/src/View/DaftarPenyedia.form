@@ -40,8 +40,8 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="submit" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="inputid" max="32767" attributes="0"/>
-                      <Component id="inputnama" pref="135" max="32767" attributes="0"/>
+                      <Component id="inputId" max="32767" attributes="0"/>
+                      <Component id="inputNama" pref="135" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
@@ -58,12 +58,12 @@
               </Group>
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="inputid" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputId" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="inputnama" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="inputNama" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
@@ -79,9 +79,9 @@
         <Property name="text" type="java.lang.String" value="DAFTAR PENYEDIA"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputid">
+    <Component class="javax.swing.JTextField" name="inputId">
     </Component>
-    <Component class="javax.swing.JTextField" name="inputnama">
+    <Component class="javax.swing.JTextField" name="inputNama">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>

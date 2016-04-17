@@ -5,9 +5,16 @@
  */
 package Controller;
 
+import Model.Aplikasi;
+import View.DaftarPenyedia;
 import View.Utama;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import javax.swing.JOptionPane;
+import tubes.AplikasiConsole;
+import tubes.Penyedia;
 
 /**
  *
@@ -16,27 +23,30 @@ import java.awt.event.ActionListener;
 public class UtamaController implements ActionListener {
     private Utama utama;
     
-    public UtamaController(){
-        utama = new Utama();
-        utama.setVisible(true);
-        utama.addListener(this);
+    Aplikasi model;
+    Utama view;
+
+    public UtamaController(Aplikasi model) {
+        this.model = model;
+        view = new Utama();
+        view.setVisible(true);
+        view.addListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         Object event = e.getSource();
-        if(event == utama.getDaftarButton()){
-            new DaftarController();
-            utama.dispose();
-        }else if(event == utama.getLoginButton()){
-            new LoginController();
-            utama.dispose();
-        }else if(event == utama.getHapusButton()){
-            new HapusController();
-            utama.dispose();
-        }else if(event == utama.getCariButton()){
-            new CariController();
-            utama.dispose();
+        if (event.equals(view.getDaftarButton())) {
+            new DaftarController(model);
+        } else if(event.equals(view.getLoginButton())){
+            new LoginController(model);
+            view.dispose();
+        } else if(event.equals(view.getHapusButton())){
+            new HapusController(model);
+            view.dispose();
+        } else if(event.equals(view.getCariButton())){
+            new CariController(model);
+            view.dispose();
         }
     }
 }

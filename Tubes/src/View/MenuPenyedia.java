@@ -5,6 +5,8 @@
  */
 package View;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Baldo
@@ -80,37 +82,7 @@ public class MenuPenyedia extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuPenyedia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuPenyedia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuPenyedia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuPenyedia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MenuPenyedia().setVisible(true);
-            }
-        });
-    }
+     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buatBarang;
@@ -118,4 +90,52 @@ public class MenuPenyedia extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton logout;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the buatBarang
+     */
+    public javax.swing.JButton getBuatBarang() {
+        return buatBarang;
+    }
+
+    /**
+     * @param buatBarang the buatBarang to set
+     */
+    public void setBuatBarang(javax.swing.JButton buatBarang) {
+        this.buatBarang = buatBarang;
+    }
+
+    /**
+     * @return the daftarBarang
+     */
+    public javax.swing.JButton getDaftarBarang() {
+        return daftarBarang;
+    }
+
+    /**
+     * @param daftarBarang the daftarBarang to set
+     */
+    public void setDaftarBarang(javax.swing.JButton daftarBarang) {
+        this.daftarBarang = daftarBarang;
+    }
+
+    /**
+     * @return the logout
+     */
+    public javax.swing.JButton getLogout() {
+        return logout;
+    }
+
+    /**
+     * @param logout the logout to set
+     */
+    public void setLogout(javax.swing.JButton logout) {
+        this.logout = logout;
+    }
+
+    public void addListener(ActionListener e){
+        buatBarang.addActionListener(e);
+        daftarBarang.addActionListener(e);
+        logout.addActionListener(e);
+    }
 }

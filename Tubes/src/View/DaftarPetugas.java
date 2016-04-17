@@ -5,6 +5,8 @@
  */
 package View;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Baldo
@@ -16,6 +18,8 @@ public class DaftarPetugas extends javax.swing.JFrame {
      */
     public DaftarPetugas() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setTitle("Daftar Petugas");
     }
 
     /**
@@ -31,8 +35,8 @@ public class DaftarPetugas extends javax.swing.JFrame {
         back = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        inputid = new javax.swing.JTextField();
-        inputnama = new javax.swing.JTextField();
+        inputId = new javax.swing.JTextField();
+        inputNama = new javax.swing.JTextField();
         submit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -66,8 +70,8 @@ public class DaftarPetugas extends javax.swing.JFrame {
                         .addGap(37, 37, 37)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(submit)
-                            .addComponent(inputnama, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                            .addComponent(inputid))))
+                            .addComponent(inputNama, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                            .addComponent(inputId))))
                 .addContainerGap(91, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -83,14 +87,14 @@ public class DaftarPetugas extends javax.swing.JFrame {
                         .addGap(65, 65, 65)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(inputid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(inputId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(jLabel3))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(inputnama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(inputNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(submit)
                 .addContainerGap(136, Short.MAX_VALUE))
@@ -102,45 +106,92 @@ public class DaftarPetugas extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DaftarPetugas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DaftarPetugas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DaftarPetugas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DaftarPetugas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new DaftarPetugas().setVisible(true);
-            }
-        });
-    }
+     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
-    private javax.swing.JTextField inputid;
-    private javax.swing.JTextField inputnama;
+    private javax.swing.JTextField inputId;
+    private javax.swing.JTextField inputNama;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JButton submit;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the back
+     */
+    public javax.swing.JButton getBack() {
+        return back;
+    }
+
+    /**
+     * @param back the back to set
+     */
+    public void setBack(javax.swing.JButton back) {
+        this.back = back;
+    }
+
+    /**
+     * @return the inputId
+     */
+    public javax.swing.JTextField getInputId() {
+        return inputId;
+    }
+
+    /**
+     * @param inputId the inputId to set
+     */
+    public void setInputId(javax.swing.JTextField inputId) {
+        this.inputId = inputId;
+    }
+
+    /**
+     * @return the inputNama
+     */
+    public javax.swing.JTextField getInputNama() {
+        return inputNama;
+    }
+
+    /**
+     * @param inputNama the inputNama to set
+     */
+    public void setInputNama(javax.swing.JTextField inputNama) {
+        this.inputNama = inputNama;
+    }
+
+    /**
+     * @return the submit
+     */
+    public javax.swing.JButton getSubmit() {
+        return submit;
+    }
+
+    /**
+     * @param submit the submit to set
+     */
+    public void setSubmit(javax.swing.JButton submit) {
+        this.submit = submit;
+    }
+    
+    public void addListener(ActionListener e){
+        getBack().addActionListener(e);
+        getSubmit().addActionListener(e);
+    }
+    
+    public int getId(){
+        return Integer.parseInt(inputId.getText());
+    }
+    
+    public void setId(String ea){
+        inputId.setText(ea);
+    }
+    
+    public String getNama(){
+        return inputNama.getText();
+    }
+    
+    public void setNama(){
+        inputNama.getText();
+    }
 }

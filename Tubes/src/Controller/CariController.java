@@ -5,8 +5,10 @@
  */
 package Controller;
 
+import Model.Aplikasi;
 import View.Cari;
 import View.Daftar;
+import View.Hapus;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -15,25 +17,30 @@ import java.awt.event.ActionListener;
  * @author Baldo
  */
 public class CariController implements ActionListener {
+
     private Cari cari;
-    
-    public CariController(){
-        cari = new Cari();
-        cari.setVisible(true); 
-        cari.addListener(this);
+
+    Aplikasi model;
+    Cari view;
+
+    public CariController(Aplikasi model) {
+        this.model = model;
+        view = new Cari();
+        view.setVisible(true);
+        view.addListener(this);
     }
-    
+
+    @Override
     public void actionPerformed(ActionEvent e) {
         Object event = e.getSource();
-        if(event == cari.getCariPenyedia()){
-            new CariPenyediaController();
-            cari.dispose();
-        }else if(event == cari.getCariPetugas()){
-            new CariPetugasController();
-            cari.dispose();
-        }else if(event == cari.getBack()){
-            new UtamaController();
-            cari.dispose();
+        if (event.equals(view.getCariPenyedia())) {
+            new CariPenyediaController(model);
+        } else if(event.equals(view.getCariPetugas())){
+            new CariPetugasController(model);
+            view.dispose();
+        } else if(event.equals(view.getCariGudang())){
+            new CariGudangController(model);
+            view.dispose();
         }
     }
 }

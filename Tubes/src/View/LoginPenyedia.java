@@ -18,6 +18,8 @@ public class LoginPenyedia extends javax.swing.JFrame {
      */
     public LoginPenyedia() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setTitle("Login Penyedia");
     }
 
     /**
@@ -142,5 +144,13 @@ public class LoginPenyedia extends javax.swing.JFrame {
         login.addActionListener(e);
         inputId.addActionListener(e);
         back.addActionListener(e);
+    }
+    
+    public String getId(){
+        return inputId.getText();
+    }
+    
+    public void setId(String ea){
+        inputId.setText(ea);
     }
 }
